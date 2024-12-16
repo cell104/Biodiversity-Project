@@ -1,17 +1,59 @@
+<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <title>書籍介紹</title>
     <style>
         /* 整體容器設定 */
+        body {
+            font-family: Arial, sans-serif; /* 字體樣式 */
+            background-color: #f0f0f0; /* 背景顏色 */
+            margin: 0;
+            padding: 0;
+        }
+
         .container {
             width: 100%;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 20px auto; /* 自動左右對齊，並添加上邊距 */
             padding: 20px;
             box-sizing: border-box;
             display: flex;
+            flex-wrap: wrap; /* 自動換行 */
             justify-content: space-between;
+        }
+
+        /* 標頭樣式 */
+        .header {
+            text-align: center; /* 標題居中 */
+            margin-bottom: 20px; /* 下邊距 */
+        }
+
+        .header img {
+            max-width: 100%; /* 確保圖像不超過寬度 */
+            height: auto; /* 自動調整高度 */
+        }
+
+        /* 表格樣式 */
+        .link-table {
+            width: 100%;
+            border-collapse: collapse; /* 合併邊框 */
+            margin-bottom: 20px; /* 表格下邊距 */
+        }
+
+        .link-table th, .link-table td {
+            padding: 10px;
+            text-align: center; /* 內容居中 */
+            border: 1px solid #ccc; /* 儲存格邊框 */
+        }
+
+        .link-table td a {
+            text-decoration: none; /* 取消超連結底線 */
+            color: #007BFF; /* 超連結顏色 */
+        }
+
+        .link-table td a:hover {
+            text-decoration: underline; /* 懸停時顯示底線 */
         }
 
         /* 左右兩個 DIV 的共同樣式 */
@@ -22,6 +64,7 @@
             border-radius: 8px;
             background-color: #f9f9f9;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px; /* 每個書籍區塊下方的間距 */
         }
 
         /* 書籍標題樣式 */
@@ -46,30 +89,104 @@
             margin-bottom: 15px;
             border-radius: 4px;
         }
+
+        /* 版權和聯絡信息區塊樣式 */
+        .footer-info {
+            width: 100%;
+            padding: 20px;
+            background-color: #f1f1f1;
+            border-top: 1px solid #ccc;
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+
+        .footer-info p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .footer-info a {
+            color: #007BFF; /* 超連結顏色 */
+            text-decoration: none; /* 取消底線 */
+        }
+
+        .footer-info a:hover {
+            text-decoration: underline; /* 懸停時顯示底線 */
+        }
     </style>
 </head>
+  <html>
 <body>
-    <div class="container">
+    <header class="header">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThZkvzeicI4rpTLdgQLI0dLxzJGBsvw6DOBA&s" alt="Logo" style="max-width: 150px;">
+        <h1>書籍介紹</h1>
+    </header>
+
+    <!-- 新增的導航表格 -->
+    <div>
+        <table class="link-table">
+            <tr>
+                <td><a href="#哈利波特">哈利波特</a></td>
+                <td><a href="#魔戒">魔戒</a></td>
+                <td><a href="#科幻小說">科幻小說</a></td>
+                <td><a href="#經典文學">經典文學</a></td>
+                <td><a href="#關於我們">關於我們</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <main class="container">
         <!-- 左側書籍介紹 -->
-        <div class="book-div">
+        <article class="book-div" id="哈利波特">
             <h2 class="book-title">哈利波特：神秘的魔法石</h2>
-            <img src="https://upload.wikimedia.org/wikipedia/zh/3/3c/Hp1tw.jpg&quot; alt="哈利波特封面" class="book-image">
-            <div class="book-content">
+            <img src="https://upload.wikimedia.org/wikipedia/zh/3/3c/Hp1tw.jpg" alt="哈利波特封面" class="book-image">
+            <section class="book-content">
                 <p>《哈利波特：神秘的魔法石》是J.K.羅琳的奇幻文學作品，講述了一個年輕巫師的冒險故事。在11歲生日時，哈利發現自己是一個巫師，並被錄取到霍格華茲魔法學校就讀。</p>
                 <p>在學校裡，他結識了終身摯友榮恩和妙麗，一同揭開學校裡的神秘面紗，並與邪惡的佛地魔展開對抗。這是一個關於友情、勇氣和成長的精彩故事。</p>
-            </div>
-        </div>
+            </section>
+        </article>
      
-
         <!-- 右側書籍介紹 -->
-        <div class="book-div">
+        <article class="book-div" id="魔戒">
             <h2 class="book-title">魔戒首部曲：魔戒現身</h2>
-            <img src="/api/placeholder/300/400" alt="魔戒封面" class="book-image">
-            <div class="book-content">
+            <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/7/74/LOTRFOTRmovie.jpg/220px-LOTRFOTRmovie.jpg" alt="魔戒封面" class="book-image">
+            <section class="book-content">
                 <p>《魔戒》是托爾金創作的史詩奇幻小說，故事從霍比特人佛羅多繼承了一枚神秘戒指開始。這枚戒指是由邪惡的魔王索倫所打造，具有強大的魔力。</p>
                 <p>在甘道夫的指引下，佛羅多必須展開一段危險的旅程，將魔戒摧毀。這是一個關於善與惡之間永恆鬥爭的傳奇故事，充滿了冒險、友情與犧牲。</p>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+            </section>
+        </article>
+    </main>
+
+    <main class="container">
+        <!-- 左側書籍介紹 (複製的內容) -->
+        <article class="book-div" id="哈利波特-2">
+            <h2 class="book-title">哈利波特：鳳凰會的密令</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/zh/thumb/f/f1/Hp5tw.jpg/220px-Hp5tw.jpg" alt="哈利波特封面" class="book-image">
+            <section class="book-content">
+                <p>《哈利波特：鳳凰會的密令》是J.K.羅琳的奇幻文學作品，講述哈利和他的朋友們在霍格華茲面對越來越大的威脅，並準備與邪惡勢力對抗的故事。</p>
+                <p>這本書不僅探討了成長過程中的挑戰，也深刻描繪了友情與勇氣的重要性。</p>
+            </section>
+        </article>
+     
+        <!-- 右側書籍介紹 (新的內容) -->
+        <article class="book-div" id="新書籍">
+            <h2 class="book-title">新書籍介紹</h2>
+            <img src="https://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/017/83/0010178341.jpg&v=578e0f3dk&w=375&h=375" alt="新書籍封面" class="book-image">
+            <section class="book-content">
+                <p>這本書是最新推出的作品，探討了現代社會中的各種主題，包括友情、挑戰和自我發現。</p>
+            </section>
+        </article>
+    </main>
+  
+      <!-- 版權和聯絡資訊區 -->
+    <div class="footer-info">
+        <p>&copy; 2024 書籍介紹
+© 2024 圖書介紹網路版權所有。
+
+如果需要進一步修改或調整，隨時告訴我！
+          
+電子郵件聯絡@ example.co
+
+</body>  
+  </html>
